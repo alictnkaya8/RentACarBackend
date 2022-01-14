@@ -25,15 +25,9 @@ namespace Business.Concrete
         [SecuredOperation("car.add,admin")]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
-        {
-            IResult result = BusinessRules.Run(CheckIfCarNameExists(car.Description));
-            if (result != null)
-            {
-                return result;
-            }
+        { 
             _carDal.Add(car);
             return new SuccessResult(Messages.CarAdded);
-
         }
 
         public IResult Delete(Car car)
