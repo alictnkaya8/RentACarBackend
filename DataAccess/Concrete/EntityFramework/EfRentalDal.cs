@@ -31,7 +31,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  CustomerId = cus.CustomerId,
                                  CustomerName = cus.CompanyName,
                                  RentDate = r.RentDate,
-                                 ReturnDate = r.ReturnDate
+                                 ReturnDate = (DateTime)r.ReturnDate
                              };
                 return result.ToList();
             }
